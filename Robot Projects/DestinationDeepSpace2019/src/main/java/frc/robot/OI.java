@@ -12,6 +12,10 @@ import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import frc.robot.commands.IntakeIn;
 import frc.robot.commands.IntakeOut;
+import frc.robot.commands.Lower1;
+import frc.robot.commands.Lower2;
+import frc.robot.commands.Raise1;
+import frc.robot.commands.Raise2;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -21,8 +25,16 @@ public class OI {
   XboxController xboxControl = new XboxController(RobotMap.xboxControl);
   Button intakeIn = new JoystickButton(xboxControl, 1);
   Button intakeOut = new JoystickButton(xboxControl, 2);
+  Button raise1 = new JoystickButton(xboxControl, 3);
+  Button raise2 = new JoystickButton(xboxControl, 4);
+  Button lower1 = new JoystickButton(xboxControl, 5);
+  Button lower2 = new JoystickButton(xboxControl, 6);
   public OI() {
     intakeIn.whileHeld(new IntakeIn());
     intakeOut.whileHeld(new IntakeOut());
+    raise1.whenPressed(new Raise1());
+    raise2.whenPressed(new Raise2());
+    lower1.whenPressed(new Lower1());
+    lower2.whenPressed(new Lower2());
   }
 }

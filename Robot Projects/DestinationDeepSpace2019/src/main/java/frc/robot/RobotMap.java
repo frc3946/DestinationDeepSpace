@@ -14,7 +14,13 @@ package frc.robot;
  * floating around.
  */
 public class RobotMap {
+  //Intake Objects
   public static final int intakeRight = 1;
   public static final int intakeLeft = 2;
+  public static final int solenoidOne = 0;
+  public static final int solenoidTwo = 1;
+  public static final int rampSolenoid = 2;
+
+  //OI Objects
   public static final int xboxControl = 0;
 }
